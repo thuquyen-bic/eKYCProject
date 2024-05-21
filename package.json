@@ -10,8 +10,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@beincom/rn-wallet-sdk": "^0.0.48",
+    "@react-native-community/checkbox": "^0.5.17",
+    "@react-native-picker/picker": "^2.7.5",
     "react": "18.2.0",
-    "react-native": "0.74.1"
+    "react-native": "0.74.1",
+    "react-native-paste-image-input": "github:sonls/react-native-paste-image-input",
+    "react-native-quick-crypto": "^0.7.0-rc.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
