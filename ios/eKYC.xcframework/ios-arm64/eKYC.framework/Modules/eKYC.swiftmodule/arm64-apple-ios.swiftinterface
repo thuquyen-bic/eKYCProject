@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name eKYC
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name eKYC
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import Accelerate
@@ -68,7 +68,7 @@ public typealias ParsedResult = eKYC.MRZResult
   public func isAdvanceLiveness(_ isAdvanceLiveness: Swift.Bool) -> eKYC.ConfigurationBuilder
   public func faceChallengeMode(_ faceChallengeMode: eKYC.FaceChallengeMode) -> eKYC.ConfigurationBuilder
   public func tutorialVideoURL(_ tutorialVideoURL: Swift.String) -> eKYC.ConfigurationBuilder
-  public func cardTypeLabel(_ cardTypeLabel: Swift.String) -> eKYC.ConfigurationBuilder
+  public func cardTypeLabel(_ cardTypeLabel: Swift.String?) -> eKYC.ConfigurationBuilder
   public func titleLabel(_ titleLabel: Swift.String) -> eKYC.ConfigurationBuilder
   public func nfcInput(_ nfcInput: eKYC.NFCInput) -> eKYC.ConfigurationBuilder
   public func isNFC(_ isNFC: Swift.Bool) -> eKYC.ConfigurationBuilder
@@ -119,7 +119,7 @@ public struct Configuration {
   public var isAdvanceFaceMatching: Swift.Bool
   public var isAdvanceLiveness: Swift.Bool
   public var tutorialVideoURL: Swift.String
-  public var cardTypeLabel: Swift.String
+  public var cardTypeLabel: Swift.String?
   public var titleLabel: Swift.String
   public var nfcInput: eKYC.NFCInput?
   public var isNFC: Swift.Bool
@@ -1087,11 +1087,15 @@ public struct AdvanceImageData {
     get
   }
 }
-public enum Language : Swift.String {
+public enum Language : Swift.String, Swift.CaseIterable {
   case vi
   case en
   public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.Language]
   public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.Language] {
+    get
+  }
   public var rawValue: Swift.String {
     get
   }

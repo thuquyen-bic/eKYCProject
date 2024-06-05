@@ -1,0 +1,1176 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name eKYC
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Accelerate
+import CoreGraphics
+import CoreImage
+import CoreMedia
+import CoreNFC
+import CryptoSwift
+import DeveloperToolsSupport
+import Foundation
+import MediaPlayer
+import Photos
+import ReplayKit
+import Swift
+import SwiftUI
+import UIKit
+import VideoToolbox
+import Vision
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import eKYC
+public typealias ParsedResult = eKYC.MRZResult
+@objc @_inheritsConvenienceInitializers public class ConfigurationBuilder : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func isDebug(_ isDebug: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func sdkType(_ sdkType: eKYC.SDKType) -> eKYC.ConfigurationBuilder
+  public func uiFlowType(_ uiFlowType: eKYC.UIFlowType) -> eKYC.ConfigurationBuilder
+  public func flow(_ flow: eKYC.Flow) -> eKYC.ConfigurationBuilder
+  public func showHelp(_ showHelp: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isShowHelpButton(_ isShowHelpButton: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func enableVoiceHelp(_ enableVoiceHelp: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func showAutoCaptureButton(_ showAutoCaptureButton: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func autoCaptureModeOn(_ autoCaptureModeOn: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func showFlashButton(_ showFlashButton: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func skipConfirmScreen(_ skipConfirmScreen: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func cameraZoom(_ cameraZoom: Swift.Double) -> eKYC.ConfigurationBuilder
+  public func buttonColor(_ buttonColor: UIKit.UIColor) -> eKYC.ConfigurationBuilder
+  public func idCardTypes(_ idCardTypes: [eKYC.IdCardType]) -> eKYC.ConfigurationBuilder
+  public func isIdCardSpoof(_ isIdCardSpoof: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isIdCardQuality(_ isIdCardQuality: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func idCardRetakeLimit(_ idCardRetakeLimit: Swift.Int) -> eKYC.ConfigurationBuilder
+  public func idCardMinRatio(_ idCardMinRatio: Swift.Double) -> eKYC.ConfigurationBuilder
+  public func cardCameraMode(_ cardCameraMode: eKYC.CameraMode) -> eKYC.ConfigurationBuilder
+  public func advancedLiveness(_ advancedLiveness: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func advancedLivenessConfig(_ advancedLivenessConfig: eKYC.AdvancedLivenessConfig?) -> eKYC.ConfigurationBuilder
+  public func isFaceQuality(_ isFaceQuality: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isLiveness(_ isLiveness: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func faceRetakeLimit(_ faceRetakeLimit: Swift.Int) -> eKYC.ConfigurationBuilder
+  public func faceMinRatio(_ faceMinRatio: Swift.Double) -> eKYC.ConfigurationBuilder
+  public func faceMaxRatio(_ faceMaxRatio: Swift.Double) -> eKYC.ConfigurationBuilder
+  public func selfieCameraMode(_ selfieCameraMode: eKYC.CameraMode) -> eKYC.ConfigurationBuilder
+  public func isFaceSave(_ isFaceSave: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isFaceSearch(_ isFaceSearch: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func frontIdCardId(_ frontIdCardId: Swift.String) -> eKYC.ConfigurationBuilder
+  public func isCacheImage(_ isCacheImage: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func language(_ language: eKYC.Language) -> eKYC.ConfigurationBuilder
+  public func cardAbbr(_ cardAbbr: eKYC.CardAbbr) -> eKYC.ConfigurationBuilder
+  public func isFaceUpdate(_ isFaceUpdate: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func font(_ font: eKYC.FontConfig) -> eKYC.ConfigurationBuilder
+  public func buttonCornerRadius(_ buttonCornerRadius: CoreFoundation.CGFloat) -> eKYC.ConfigurationBuilder
+  public func isSaveVideo(_ isSaveVideo: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isImageID(_ isImageID: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isAdvanceFaceMatching(_ isAdvanceFaceMatching: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isAdvanceLiveness(_ isAdvanceLiveness: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func faceChallengeMode(_ faceChallengeMode: eKYC.FaceChallengeMode) -> eKYC.ConfigurationBuilder
+  public func tutorialVideoURL(_ tutorialVideoURL: Swift.String) -> eKYC.ConfigurationBuilder
+  public func cardTypeLabel(_ cardTypeLabel: Swift.String?) -> eKYC.ConfigurationBuilder
+  public func titleLabel(_ titleLabel: Swift.String) -> eKYC.ConfigurationBuilder
+  public func nfcInput(_ nfcInput: eKYC.NFCInput) -> eKYC.ConfigurationBuilder
+  public func isNFC(_ isNFC: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isReadMRZ(_ isReadMRZ: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func isScroreEqualThan400(_ isScroreEqualThan400: Swift.Bool) -> eKYC.ConfigurationBuilder
+  public func build() -> eKYC.Configuration
+  @objc deinit
+}
+public struct Configuration {
+  public var isDebug: Swift.Bool
+  public var sdkType: eKYC.SDKType
+  public var uiFlowType: eKYC.UIFlowType
+  public var flow: eKYC.Flow
+  public var showHelp: Swift.Bool
+  public var isShowHelpButton: Swift.Bool
+  public var enableVoiceHelp: Swift.Bool
+  public var showAutoCaptureButton: Swift.Bool
+  public var autoCaptureModeOn: Swift.Bool
+  public var showFlashButton: Swift.Bool
+  public var skipConfirmScreen: Swift.Bool
+  public var cameraZoom: Swift.Double
+  public var buttonColor: UIKit.UIColor
+  public var buttonCornerRadius: CoreFoundation.CGFloat
+  public var idCardTypes: [eKYC.IdCardType]
+  public var isIdCardSpoof: Swift.Bool
+  public var isIdCardQuality: Swift.Bool
+  public var idCardRetakeLimit: Swift.Int
+  public var idCardMinRatio: Swift.Double
+  public var cardCameraMode: eKYC.CameraMode
+  public var advancedLiveness: Swift.Bool
+  public var advancedLivenessConfig: eKYC.AdvancedLivenessConfig?
+  public var isFaceQuality: Swift.Bool
+  public var isLiveness: Swift.Bool
+  public var faceRetakeLimit: Swift.Int
+  public var faceMinRatio: Swift.Double
+  public var faceMaxRatio: Swift.Double
+  public var selfieCameraMode: eKYC.CameraMode
+  public var isFaceSave: Swift.Bool
+  public var isFaceSearch: Swift.Bool
+  public var isFaceUpdate: Swift.Bool
+  public var frontIdCardId: Swift.String?
+  public var isCacheImage: Swift.Bool
+  public var language: eKYC.Language
+  public var cardAbbr: eKYC.CardAbbr
+  public var font: eKYC.FontConfig?
+  public var isSaveVideo: Swift.Bool
+  public var isImageID: Swift.Bool
+  public var isAdvanceFaceMatching: Swift.Bool
+  public var isAdvanceLiveness: Swift.Bool
+  public var tutorialVideoURL: Swift.String
+  public var cardTypeLabel: Swift.String?
+  public var titleLabel: Swift.String
+  public var nfcInput: eKYC.NFCInput?
+  public var isNFC: Swift.Bool
+  public var faceChallengeMode: eKYC.FaceChallengeMode
+  public var isReadMRZ: Swift.Bool
+  public var expectedCapture: Swift.Int
+  public var skipMoreThanOneFace: Swift.Double
+  public var centerYourFaceScale: Swift.Double
+  public var delayCapture: Swift.Double
+  public var T1: Swift.Int
+  public var T2: Swift.Int
+  public var fitScale: Swift.Double
+  public var ovalScale: Swift.Double
+}
+public struct NFCInput {
+  public var identityNumber: Swift.String {
+    get
+  }
+  public var dateOfBirth: Swift.String {
+    get
+  }
+  public var expireDate: Swift.String {
+    get
+  }
+  public init(identityNumber: Swift.String, dateOfBirth: Swift.String, expireDate: Swift.String)
+}
+public protocol EkycTracking {
+  func track(objectName: Swift.String, eventSrc: eKYC.EventSrc, objectType: eKYC.ObjectType, action: eKYC.EventAction, eventValue: [Swift.String : Any]?)
+}
+public enum EventSrc : Swift.String {
+  case user
+  case app
+  case device
+  case system
+  case thirdParty
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ObjectType : Swift.String {
+  case banner
+  case button
+  case dropdown
+  case icon
+  case image
+  case link
+  case log
+  case popup
+  case scrollingDown
+  case textBox
+  case view
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum EventAction : Swift.String {
+  case tap
+  case show
+  case record
+  case scroll
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ObjectName {
+}
+public enum SDKType {
+  case normal
+  case uiOnly
+  public static func == (a: eKYC.SDKType, b: eKYC.SDKType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
+}
+public enum CameraMode : Swift.String, Swift.CaseIterable {
+  case front
+  case back
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.CameraMode]
+  public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.CameraMode] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CardAbbr : Swift.String {
+  case abbr
+  case full
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Flow {
+  case idCardFront
+  case idCardBack
+  case idCardFull
+  case faceSearch
+  case faceFull
+  case ekycFull
+  public static func == (a: eKYC.Flow, b: eKYC.Flow) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum UIFlowType {
+  case idCardFront
+  case idCardBack
+  case faceBasic
+  case faceAdvance
+  case faceNearFar
+  case nfc
+  public static func == (a: eKYC.UIFlowType, b: eKYC.UIFlowType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @available(iOS 13.0, *)
+final public class LiveMRZScanner {
+  public init(frequency: Swift.Int = 2)
+  final public func scanFrame(scanningImage: eKYC.ScanningImage, orientation: ImageIO.CGImagePropertyOrientation, completionHandler: @escaping (Swift.Result<eKYC.DocumentScanningResult<eKYC.ParsedResult>, any Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public struct KYCResult : Swift.Encodable {
+  public var card: eKYC.FullCardResponse? {
+    get
+  }
+  public var face: eKYC.FullFaceResponse? {
+    get
+  }
+  public var mrzData: eKYC.ParsedResult? {
+    get
+  }
+  public var mrzString: Swift.String? {
+    get
+  }
+  public var nfc: eKYC.NFCResponse?
+  public var videoPath: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public class AuthConfigurationBuilder {
+  public init()
+  public func proxyURL(_ proxyURL: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func clientCode(_ clientCode: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func token(_ token: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func userIDType(_ userIDType: eKYC.UserIdType) -> eKYC.AuthConfigurationBuilder
+  public func userID(_ userID: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func requestID(_ requestID: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func xRequestID(_ xRequestID: Swift.String) -> eKYC.AuthConfigurationBuilder
+  public func build() -> eKYC.AuthConfiguration
+  @objc deinit
+}
+public struct AuthConfiguration {
+  public var proxyURL: Swift.String {
+    get
+  }
+  public var clientCode: Swift.String {
+    get
+  }
+  public var token: Swift.String {
+    get
+  }
+  public var userIDType: eKYC.UserIdType? {
+    get
+  }
+  public var userID: Swift.String {
+    get
+  }
+  public var requestID: Swift.String? {
+    get
+  }
+  public var xRequestID: Swift.String? {
+    get
+  }
+}
+public struct FullFaceResponse : Swift.Codable {
+  public var faceMatchingResult: eKYC.FaceMatchingResult? {
+    get
+  }
+  public var advanceFaceMatchingResult: [eKYC.AdvanceFaceMatchingResult]? {
+    get
+  }
+  public var advanceLivenessResult: [eKYC.AdvancedLivenessResult]? {
+    get
+  }
+  public var qualityResult: eKYC.QualityResult? {
+    get
+  }
+  public var livenessResult: eKYC.FaceLivenessResult? {
+    get
+  }
+  public var faceSearchResult: eKYC.FaceSearchResult? {
+    get
+  }
+  public var faceSaveResult: eKYC.FaceSaveResult? {
+    get
+  }
+  public var faceUpdateResult: eKYC.FaceUpdateResult? {
+    get
+  }
+  public var frontImageID: Swift.String? {
+    get
+  }
+  public var liveImageID: Swift.String? {
+    get
+  }
+  public var userID: Swift.String? {
+    get
+  }
+  public var userIDArg: Swift.String? {
+    get
+  }
+  public var code: Swift.Int? {
+    get
+  }
+  public var message: Swift.String? {
+    get
+  }
+  public var notice: Swift.String? {
+    get
+  }
+  public var requestID: Swift.String? {
+    get
+  }
+  public var transID: Swift.String? {
+    get
+  }
+  public var signature: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceMatchingResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var verifyResult: Swift.Bool? {
+    get
+  }
+  public var detail: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceQualityResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceLivenessResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var verifyResult: Swift.Bool? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceSearchResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var userID: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceSaveResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var userID: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FaceUpdateResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var userID: Swift.Bool? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AdvanceFaceMatchingResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var liveImageID: Swift.String? {
+    get
+  }
+  public var otherImageID: Swift.String? {
+    get
+  }
+  public var verifyResult: Swift.Bool? {
+    get
+  }
+  public var plt: Swift.Double? {
+    get
+  }
+  public var transID: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AdvancedLivenessResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var verifyResult: Swift.Bool? {
+    get
+  }
+  public var imageID: Swift.String? {
+    get
+  }
+  public var plt: Swift.Double? {
+    get
+  }
+  public var transID: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum FaceChallengeMode {
+  case restricted
+  case unrestricted
+  public static func == (a: eKYC.FaceChallengeMode, b: eKYC.FaceChallengeMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LogEntry {
+  public var logString: Swift.String {
+    get
+  }
+}
+public enum CardType : Swift.String {
+  case cmndFront
+  case cmndBack
+  case cmccFront
+  case cccdBack
+  case cccdFront
+  case passportVN
+  case cccdFrontChip
+  case cccdBackChip
+  case cmqdA
+  case cmqdABack
+  case cmqdB
+  case cmqdBBack
+  case cmqdC
+  case cmqdCBack
+  case cmqdD
+  case cmqdDBack
+  case blxFrontOld
+  case blxBackOld
+  case blxFrontNew
+  case blxBackNew
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum eKYCError : Swift.Error {
+  case userCancelled
+  case exceedMaxRetry
+  case invalidInputConfiguration
+  case notSupportDevice
+  public static func == (a: eKYC.eKYCError, b: eKYC.eKYCError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum NFCError : Swift.Error {
+  case nfcNotAvailable
+  case disconnected
+  case invalidMrz
+  case moreThanOneTag
+  case userCancelled
+  case timeout
+  case unknown
+  public var value: Swift.String {
+    get
+  }
+  public static func == (a: eKYC.NFCError, b: eKYC.NFCError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct NFCResult : Swift.Codable {
+  public var dataVerifyObject: Swift.String? {
+    get
+  }
+  public var nfcPortrait: Swift.String? {
+    get
+  }
+  public var identityData: eKYC.IdentityData? {
+    get
+  }
+  public var activeAuthentication: Swift.Bool? {
+    get
+  }
+  public var chipAuthentication: Swift.Bool? {
+    get
+  }
+  public var passiveAuthentication: Swift.Bool? {
+    get
+  }
+  public init(dataVerifyObject: Swift.String? = nil, nfcPortrait: Swift.String? = nil, identityData: eKYC.IdentityData? = nil, activeAuthentication: Swift.Bool = false, chipAuthentication: Swift.Bool = false, passiveAuthentication: Swift.Bool = false)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardInformation : Swift.Codable {
+  public var id: Swift.String? {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var birthday: Swift.String? {
+    get
+  }
+  public var birthplace: Swift.String? {
+    get
+  }
+  public var sex: Swift.String? {
+    get
+  }
+  public var address: Swift.String? {
+    get
+  }
+  public var province: Swift.String? {
+    get
+  }
+  public var district: Swift.String? {
+    get
+  }
+  public var ward: Swift.String? {
+    get
+  }
+  public var provinceCode: Swift.String? {
+    get
+  }
+  public var districtCode: Swift.String? {
+    get
+  }
+  public var wardCode: Swift.String? {
+    get
+  }
+  public var street: Swift.String? {
+    get
+  }
+  public var nationality: Swift.String? {
+    get
+  }
+  public var religion: Swift.String? {
+    get
+  }
+  public var ethnicity: Swift.String? {
+    get
+  }
+  public var expiry: Swift.String? {
+    get
+  }
+  public var feature: Swift.String? {
+    get
+  }
+  public var issueDate: Swift.String? {
+    get
+  }
+  public var issueBy: Swift.String? {
+    get
+  }
+  public var licenseClass: Swift.String? {
+    get
+  }
+  public var passportID: Swift.String? {
+    get
+  }
+  public var passportType: Swift.String? {
+    get
+  }
+  public var miltaryTitle: Swift.String? {
+    get
+  }
+  public var typeBlood: Swift.String? {
+    get
+  }
+  public var cmndID: Swift.String? {
+    get
+  }
+  public var type: Swift.String? {
+    get
+  }
+  public var document: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol eKYCDelegate : AnyObject {
+  func onError(error: eKYC.eKYCError)
+  func onCompleteKYC(result: eKYC.KYCResult)
+  func onCompleteUIFlow(result: eKYC.KYCUIResult)
+  func onCompleteUINFCFlow(result: eKYC.NFCResult)
+  func viewGuide()
+  func backHome()
+}
+extension eKYC.eKYCDelegate {
+  public func viewGuide()
+  public func backHome()
+}
+public enum UserIdType : Swift.String, Swift.CaseIterable {
+  case phoneNum
+  case idCardID
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.UserIdType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.UserIdType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class AdvancedLivenessConfig {
+  @available(*, deprecated, message: "Use leftAngle and rightAngle instead")
+  public var yawAngle: Swift.Int {
+    get
+  }
+  @available(*, deprecated, message: "Use topAngle and bottomAngle instead")
+  public var pitchAngle: Swift.Int {
+    get
+  }
+  public var challengeRetakeLimit: Swift.Int {
+    get
+  }
+  public var duration: Swift.Int {
+    get
+  }
+  public init(yawAngle: Swift.Int = 20, pitchAngle: Swift.Int = 15, challengeRetakeLimit: Swift.Int = 4, duration: Swift.Int = 20)
+  public var leftAngle: Swift.Int {
+    get
+  }
+  public var rightAngle: Swift.Int {
+    get
+  }
+  @available(*, deprecated, message: "Removed")
+  public var topAngle: Swift.Int {
+    get
+  }
+  @available(*, deprecated, message: "Removed")
+  public var bottomAngle: Swift.Int {
+    get
+  }
+  @available(*, deprecated, message: "Removed")
+  public init(leftAngle: Swift.Int = 20, rightAngle: Swift.Int = 20, topAngle: Swift.Int = 25, bottomAngle: Swift.Int = 15, challengeRetakeLimit: Swift.Int, duration: Swift.Int)
+  public init(leftAngle: Swift.Int, rightAngle: Swift.Int, challengeRetakeLimit: Swift.Int, duration: Swift.Int)
+  @objc deinit
+}
+public enum IdCardType : Swift.String, Swift.CaseIterable {
+  case cmnd
+  case cccd
+  case passport
+  case blx
+  case cmqd
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.IdCardType]
+  public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.IdCardType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum FacePose : Swift.String, Swift.CaseIterable {
+  case left
+  case right
+  case top
+  case bottom
+  case straight
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.FacePose]
+  public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.FacePose] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct MRZParser {
+  public init(isOCRCorrectionEnabled: Swift.Bool)
+  public func parse(mrzLines: [Swift.String]) -> eKYC.MRZResult?
+  public func parse(mrzString: Swift.String) -> eKYC.MRZResult?
+}
+@_hasMissingDesignatedInitializers public class eKYCModule {
+  public static var nfcClosure: ((_ mrz: Swift.String, @escaping (([Swift.String : Any]?, Swift.String?) -> Swift.Void)) -> Swift.Void)?
+  public static var logs: [eKYC.LogEntry]
+  public static func version() -> Swift.String
+  public static func start(viewController: UIKit.UIViewController, authConfiguration: eKYC.AuthConfiguration, configuration: eKYC.Configuration, delegate: any eKYC.eKYCDelegate)
+  public static func registerTracker(_ tracker: any eKYC.EkycTracking)
+  @objc deinit
+}
+public enum MRZFormat : Swift.CaseIterable {
+  case td1, td2, td3
+  public var lineLength: Swift.Int {
+    get
+  }
+  public var linesCount: Swift.Int {
+    get
+  }
+  public static func == (a: eKYC.MRZFormat, b: eKYC.MRZFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [eKYC.MRZFormat]
+  public static var allCases: [eKYC.MRZFormat] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct MRZResult : Swift.Hashable {
+  public enum DocumentType : Swift.CaseIterable {
+    case visa
+    case passport
+    case id
+    case undefined
+    public static func == (a: eKYC.MRZResult.DocumentType, b: eKYC.MRZResult.DocumentType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [eKYC.MRZResult.DocumentType]
+    public static var allCases: [eKYC.MRZResult.DocumentType] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Sex : Swift.CaseIterable {
+    case male
+    case female
+    case unspecified
+    public static func == (a: eKYC.MRZResult.Sex, b: eKYC.MRZResult.Sex) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [eKYC.MRZResult.Sex]
+    public static var allCases: [eKYC.MRZResult.Sex] {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let format: eKYC.MRZFormat
+  public let documentType: eKYC.MRZResult.DocumentType
+  public let countryCode: Swift.String
+  public let surnames: Swift.String
+  public let givenNames: Swift.String
+  public let documentNumber: Swift.String?
+  public let nationalityCountryCode: Swift.String
+  public let birthdate: Foundation.Date?
+  public let sex: eKYC.MRZResult.Sex
+  public let expiryDate: Foundation.Date?
+  public let optionalData: Swift.String?
+  public let optionalData2: Swift.String?
+  public var cardFontId: Swift.String?
+  public var cardBackId: Swift.String?
+  public init(format: eKYC.MRZFormat, documentType: eKYC.MRZResult.DocumentType, countryCode: Swift.String, surnames: Swift.String, givenNames: Swift.String, documentNumber: Swift.String?, nationalityCountryCode: Swift.String, birthdate: Foundation.Date?, sex: eKYC.MRZResult.Sex, expiryDate: Foundation.Date?, optionalData: Swift.String?, optionalData2: Swift.String?)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: eKYC.MRZResult, b: eKYC.MRZResult) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct NFCResponse : Swift.Codable {
+  public var code: Swift.Int
+  public var message: Swift.String
+  public var requestID: Swift.String?
+  public var chipDataVerifyResult: eKYC.ChipDataVerifyResult?
+  public var faceMatchingResult: eKYC.FaceMatchingResult?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ChipDataVerifyResult : Swift.Codable {
+  public var accuracy: Swift.Double?
+  public var detail: Swift.String?
+  public var data: Swift.String?
+  public var plt: Swift.Double?
+  public var expireTimeResponse: Swift.String?
+  public var responds: eKYC.ChipDataVerifyResult.ChipDataResponse
+  public var signature: Swift.String?
+  public struct ChipDataResponse : Swift.Codable {
+    public var result: Swift.Bool?
+    public var message: Swift.String?
+    public var responseId: Swift.String?
+    public var exitcode: Swift.Int
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class FaceDetectorUtils {
+  @objc deinit
+}
+public struct FullCardResponse : Swift.Codable {
+  public var ocrResult: eKYC.OCRResult? {
+    get
+  }
+  public var qualityResult: eKYC.QualityResult? {
+    get
+  }
+  public var spoofResult: eKYC.SpoofResult? {
+    get
+  }
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var requestID: Swift.String? {
+    get
+  }
+  public var requestTime: Swift.String? {
+    get
+  }
+  public var responseTime: Swift.String? {
+    get
+  }
+  public var signature: Swift.String? {
+    get
+  }
+  public var frontImageID: Swift.String? {
+    get
+  }
+  public var backImageID: Swift.String? {
+    get
+  }
+  public var notice: Swift.String? {
+    get
+  }
+  public var transID: Swift.String? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OCRResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public var information: eKYC.CardInformation? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct QualityResult : Swift.Codable {
+  public var frontIDCard: eKYC.CardCheckResult? {
+    get
+  }
+  public var backIDCard: eKYC.CardCheckResult? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SpoofResult : Swift.Codable {
+  public var frontIDCard: eKYC.CardCheckResult? {
+    get
+  }
+  public var backIDCard: eKYC.CardCheckResult? {
+    get
+  }
+  public var packSpoof: eKYC.CardCheckResult? {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CardCheckResult : Swift.Codable {
+  public var code: Swift.Int {
+    get
+  }
+  public var message: Swift.String {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ScanningImage {
+  case cgImage(CoreGraphics.CGImage)
+  case pixelBuffer(CoreVideo.CVPixelBuffer)
+}
+public struct IdentityData : Swift.Codable {
+  public var mrz: Swift.String? {
+    get
+  }
+  public var cardNumber: Swift.String? {
+    get
+  }
+  public var dateOfBirth: Swift.String? {
+    get
+  }
+  public var issueDate: Swift.String? {
+    get
+  }
+  public var previousNumber: Swift.String? {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var sex: Swift.String? {
+    get
+  }
+  public var nationality: Swift.String? {
+    get
+  }
+  public var nation: Swift.String? {
+    get
+  }
+  public var religion: Swift.String? {
+    get
+  }
+  public var hometown: Swift.String? {
+    get
+  }
+  public var address: Swift.String? {
+    get
+  }
+  public var expireDate: Swift.String? {
+    get
+  }
+  public var fatherName: Swift.String? {
+    get
+  }
+  public var motherName: Swift.String? {
+    get
+  }
+  public var partnerName: Swift.String? {
+    get
+  }
+  public var feature: Swift.String? {
+    get
+  }
+  public var com: Swift.String? {
+    get
+  }
+  public var sod: Swift.String? {
+    get
+  }
+  public init(mrz: Swift.String? = nil, cardNumber: Swift.String? = nil, dateOfBirth: Swift.String? = nil, issueDate: Swift.String? = nil, previousNumber: Swift.String? = nil, name: Swift.String? = nil, sex: Swift.String? = nil, nationality: Swift.String? = nil, nation: Swift.String? = nil, religion: Swift.String? = nil, hometown: Swift.String? = nil, address: Swift.String? = nil, expireDate: Swift.String? = nil, fatherName: Swift.String? = nil, motherName: Swift.String? = nil, partnerName: Swift.String? = nil, feature: Swift.String? = nil, com: Swift.String? = nil, sod: Swift.String? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@available(iOS 13.0, *)
+public struct ImageMRZScanner {
+  public init()
+  public func scan(scanningImage: eKYC.ScanningImage, orientation: ImageIO.CGImagePropertyOrientation, recognitionLevel: eKYC.RecognitionLevel = .accurate, completionHandler: @escaping (Swift.Result<eKYC.DocumentScanningResult<eKYC.ParsedResult>, any Swift.Error>) -> Swift.Void)
+}
+public struct KYCUIResult {
+  public var cacheImage: Swift.String? {
+    get
+  }
+  public var image: Swift.String? {
+    get
+  }
+  public var imageID: Swift.String? {
+    get
+  }
+  public var code: Swift.Int? {
+    get
+  }
+  public var message: Swift.String? {
+    get
+  }
+  public var signature: Swift.String? {
+    get
+  }
+  public var requestID: Swift.String? {
+    get
+  }
+  public var advanceImageDataList: [eKYC.AdvanceImageData]? {
+    get
+  }
+  public var videoPath: Swift.String? {
+    get
+  }
+  public var mrzData: eKYC.ParsedResult? {
+    get
+  }
+  public var farImage: UIKit.UIImage? {
+    get
+  }
+  public var nearImage: UIKit.UIImage? {
+    get
+  }
+}
+public struct AdvanceImageData {
+  public var id: Swift.String? {
+    get
+  }
+  public var image: Swift.String? {
+    get
+  }
+  public var pose: eKYC.FacePose? {
+    get
+  }
+}
+public enum Language : Swift.String, Swift.CaseIterable {
+  case vi
+  case en
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [eKYC.Language]
+  public typealias RawValue = Swift.String
+  public static var allCases: [eKYC.Language] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum RecognitionLevel {
+  case accurate
+  case fast
+  public static func == (a: eKYC.RecognitionLevel, b: eKYC.RecognitionLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct FontConfig {
+  public var regular: UIKit.UIFont {
+    get
+  }
+  public var bold: UIKit.UIFont {
+    get
+  }
+  public static let `default`: eKYC.FontConfig
+  public init(regular: UIKit.UIFont, bold: UIKit.UIFont)
+}
+public typealias ScannedBoundingRects = (valid: [CoreFoundation.CGRect], invalid: [CoreFoundation.CGRect])
+public struct DocumentScanningResult<T> {
+  public let result: T
+  public let boundingRects: eKYC.ScannedBoundingRects
+}
+extension eKYC.EventSrc : Swift.Equatable {}
+extension eKYC.EventSrc : Swift.Hashable {}
+extension eKYC.EventSrc : Swift.RawRepresentable {}
+extension eKYC.ObjectType : Swift.Equatable {}
+extension eKYC.ObjectType : Swift.Hashable {}
+extension eKYC.ObjectType : Swift.RawRepresentable {}
+extension eKYC.EventAction : Swift.Equatable {}
+extension eKYC.EventAction : Swift.Hashable {}
+extension eKYC.EventAction : Swift.RawRepresentable {}
+extension eKYC.SDKType : Swift.Equatable {}
+extension eKYC.SDKType : Swift.Hashable {}
+extension eKYC.CameraMode : Swift.Equatable {}
+extension eKYC.CameraMode : Swift.Hashable {}
+extension eKYC.CameraMode : Swift.RawRepresentable {}
+extension eKYC.CardAbbr : Swift.Equatable {}
+extension eKYC.CardAbbr : Swift.Hashable {}
+extension eKYC.CardAbbr : Swift.RawRepresentable {}
+extension eKYC.Flow : Swift.Equatable {}
+extension eKYC.Flow : Swift.Hashable {}
+extension eKYC.UIFlowType : Swift.Equatable {}
+extension eKYC.UIFlowType : Swift.Hashable {}
+extension eKYC.FaceChallengeMode : Swift.Equatable {}
+extension eKYC.FaceChallengeMode : Swift.Hashable {}
+extension eKYC.CardType : Swift.Equatable {}
+extension eKYC.CardType : Swift.Hashable {}
+extension eKYC.CardType : Swift.RawRepresentable {}
+extension eKYC.eKYCError : Swift.Equatable {}
+extension eKYC.eKYCError : Swift.Hashable {}
+extension eKYC.NFCError : Swift.Equatable {}
+extension eKYC.NFCError : Swift.Hashable {}
+extension eKYC.UserIdType : Swift.Equatable {}
+extension eKYC.UserIdType : Swift.Hashable {}
+extension eKYC.UserIdType : Swift.RawRepresentable {}
+extension eKYC.IdCardType : Swift.Equatable {}
+extension eKYC.IdCardType : Swift.Hashable {}
+extension eKYC.IdCardType : Swift.RawRepresentable {}
+extension eKYC.FacePose : Swift.Equatable {}
+extension eKYC.FacePose : Swift.Hashable {}
+extension eKYC.FacePose : Swift.RawRepresentable {}
+extension eKYC.MRZFormat : Swift.Equatable {}
+extension eKYC.MRZFormat : Swift.Hashable {}
+extension eKYC.MRZResult.DocumentType : Swift.Equatable {}
+extension eKYC.MRZResult.DocumentType : Swift.Hashable {}
+extension eKYC.MRZResult.Sex : Swift.Equatable {}
+extension eKYC.MRZResult.Sex : Swift.Hashable {}
+extension eKYC.Language : Swift.Equatable {}
+extension eKYC.Language : Swift.Hashable {}
+extension eKYC.Language : Swift.RawRepresentable {}
+extension eKYC.RecognitionLevel : Swift.Equatable {}
+extension eKYC.RecognitionLevel : Swift.Hashable {}
